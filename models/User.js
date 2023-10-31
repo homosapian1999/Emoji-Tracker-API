@@ -29,6 +29,13 @@ module.exports = (sequelize, DataTypes) => {
         notEmpty: true,
       },
     },
+    recoveryKey: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
   });
   return User;
 };

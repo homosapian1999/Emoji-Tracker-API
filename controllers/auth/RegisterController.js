@@ -6,10 +6,10 @@ const User = db.User;
 
 const registerController = async (req, res) => {
   try {
-    const { username, name, email, password } = req.body;
-
+    const { username, name, email, password, recoveryKey } = req.body;
+    console.log(req.body);
     // Checking the details
-    if (!username || !name || !email || !password) {
+    if (!username || !name || !email || !password || !recoveryKey) {
       return res.status(400).send({
         success: false,
         message: "Enter details",
@@ -42,12 +42,13 @@ const registerController = async (req, res) => {
       name: name,
       email: email,
       password: hashedPassword,
+      recoveryKey: recoveryKey,
     });
 
     return res.status(201).send({
       success: true,
       message: "User created successfully",
-      newUser,
+      result: { username },
     });
   } catch (err) {
     res.status(500).send({
