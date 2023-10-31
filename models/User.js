@@ -29,9 +29,6 @@ module.exports = (sequelize, DataTypes) => {
         notEmpty: true,
       },
     },
-    token: {
-      type: DataTypes.STRING,
-    },
   });
   return User;
 };

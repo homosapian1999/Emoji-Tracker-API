@@ -1,10 +1,8 @@
-const { hashPassword } = require("../helpers/authHelper");
-const db = require("../models");
+const { hashPassword } = require("../../helpers/authHelper");
+const db = require("../../models");
 
 // Getting the model
 const User = db.User;
-
-// Register Controller;
 
 const registerController = async (req, res) => {
   try {
@@ -60,4 +58,6 @@ const registerController = async (req, res) => {
   }
 };
 
-module.exports = { registerController };
+// Login Controller
+
+module.exports = registerController;
