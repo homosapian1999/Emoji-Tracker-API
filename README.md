@@ -154,4 +154,4 @@ Disable a previously shared mood history link.
 
 ---
 
-For Queries: [Ankit](ankit349@gmail.com).
+For Queries: [Ankit](mailto:ankit349@gmail.com).
