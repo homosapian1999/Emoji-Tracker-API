@@ -13,8 +13,17 @@ const createEmojiController = async (req, res) => {
       });
     }
 
+    if (req.user._id !== username) {
+      return res.status(401).send({
+        success: false,
+        message: "You are unauthorized to create the mood",
+      });
+    }
+
     // If mood is already there, you can't create it; Then update and delete;
-    const existingUser = await Emoji.findOne({ where: { username: username } });
+    const existingUser = await Emoji.findOne({
+      where: { username: username },
+    });
 
     if (existingUser) {
       const dataObject = new Date(existingUser.date)
