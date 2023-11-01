@@ -2,6 +2,7 @@ const express = require("express");
 const {
   createEmojiController,
   updateEmojiController,
+  deleteEmojiController,
 } = require("../controllers/emoji");
 const authMiddleware = require("../middlewares/authMiddleware");
 
@@ -9,7 +10,8 @@ const router = express.Router();
 
 // Routes
 
-router.get("/create", authMiddleware, createEmojiController);
-router.get("/update/:emojiId", authMiddleware, updateEmojiController);
+router.post("/create", authMiddleware, createEmojiController);
+router.patch("/update/:emojiId", authMiddleware, updateEmojiController);
+router.delete("/delete/:emojiId", authMiddleware, deleteEmojiController);
 
 module.exports = router;

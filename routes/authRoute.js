@@ -7,8 +7,8 @@ const {
 
 const router = express.Router();
 
-router.get("/register", registerController);
+router.post("/register", registerController);
 router.get("/login", loginController);
-router.get("/forgot", forgetPasswordController);
+router.post("/forgot", forgetPasswordController);
 
 module.exports = router;
