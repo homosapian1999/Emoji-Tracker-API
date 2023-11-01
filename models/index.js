@@ -47,17 +47,4 @@ Object.keys(db).forEach((modelName) => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-// db.User = require("./User")(sequelize, Sequelize.DataTypes);
-// db.Emoji = require("./Emoji")(sequelize, Sequelize.DataTypes);
-
-// db.User.hasMany(db.Emoji, {
-//   foreignKey: "username",
-//   as: "Emoji",
-// });
-
-// db.Emoji.belongsTo(db.User, {
-//   foreignKey: "username",
-//   as: "User",
-// });
-
 module.exports = db;

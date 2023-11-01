@@ -1,10 +1,13 @@
-// const db = require("../models");
-
-// // Getting the model
-// const User = db.User;
+const shortid = require("shortid");
 
 module.exports = (sequelize, DataTypes) => {
   const Emoji = sequelize.define("Emoji", {
+    emojiId: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: () => shortid.generate(),
+      primaryKey: true,
+    },
     emoji: {
       type: DataTypes.STRING,
       allowNull: false,

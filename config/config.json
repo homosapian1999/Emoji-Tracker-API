@@ -4,6 +4,7 @@
     "password": "123456",
     "database": "EMOJI_TRACKER",
     "host": "127.0.0.1",
+    "timezone": "+05:30",
     "dialect": "mysql"
   },
   "test": {
